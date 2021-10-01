@@ -1,24 +1,199 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bzv-EQ-Sl4">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--上下左右の制約-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="上下左右の制約" id="BYZ-38-t0r" customClass="ViewController" customModule="Swift_AutoLayoutSample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cOY-YD-emQ">
+                                <rect key="frame" x="70" y="164" width="250" height="346"/>
+                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="cOY-YD-emQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="70" id="369-KN-VDK"/>
+                            <constraint firstItem="cOY-YD-emQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="120" id="Ml4-Rz-8aD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cOY-YD-emQ" secondAttribute="bottom" constant="300" id="gAF-WT-Ing"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cOY-YD-emQ" secondAttribute="trailing" constant="70" id="iZ7-EL-jln"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="29.23076923076923" y="88.862559241706151"/>
+        </scene>
+        <!--パーツ高さ固定 + 上部、左右で制約-->
+        <scene sceneID="I3I-0R-xxm">
+            <objects>
+                <viewController title="パーツ高さ固定 + 上部、左右で制約" id="zeP-jU-Xr3" customClass="ViewController" customModule="Swift_AutoLayoutSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JBw-BA-nU9">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wqe-55-ysh">
+                                <rect key="frame" x="50" y="164" width="290" height="45"/>
+                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="aLD-vf-XjT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="7Rt-BN-yr7"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Wqe-55-ysh" firstAttribute="top" secondItem="7Rt-BN-yr7" secondAttribute="top" constant="120" id="0e1-uP-amH"/>
+                            <constraint firstItem="Wqe-55-ysh" firstAttribute="leading" secondItem="7Rt-BN-yr7" secondAttribute="leading" constant="50" id="Shh-tv-X6U"/>
+                            <constraint firstItem="7Rt-BN-yr7" firstAttribute="trailing" secondItem="Wqe-55-ysh" secondAttribute="trailing" constant="50" id="yIp-Cg-3zz"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3ah-fN-iB8" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="814" y="89"/>
+        </scene>
+        <!--パーツ幅、高さ固定 + 中央寄せ 水平かつ垂直制約-->
+        <scene sceneID="R5F-mK-iuP">
+            <objects>
+                <viewController title="パーツ幅、高さ固定 + 中央寄せ 水平かつ垂直制約" id="Yd3-t8-Bdh" customClass="ViewController" customModule="Swift_AutoLayoutSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Nek-as-BJ5">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T8j-Na-JcU">
+                                <rect key="frame" x="135" y="399.66666666666669" width="120" height="45"/>
+                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="8H9-3U-3yY"/>
+                                    <constraint firstAttribute="height" constant="45" id="h2c-m0-9VA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="VoS-Vi-Xl9"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="T8j-Na-JcU" firstAttribute="centerY" secondItem="Nek-as-BJ5" secondAttribute="centerY" id="IQE-XS-Xff"/>
+                            <constraint firstItem="T8j-Na-JcU" firstAttribute="centerX" secondItem="Nek-as-BJ5" secondAttribute="centerX" id="ulg-mn-5Wp"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q7g-xB-ceL" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1569" y="89"/>
+        </scene>
+        <!--パーツ幅、高さ固定 TopButtonからの距離、左端からの距離-->
+        <scene sceneID="lMj-1y-fkF">
+            <objects>
+                <viewController title="パーツ幅、高さ固定 TopButtonからの距離、左端からの距離" id="bzv-EQ-Sl4" customClass="ViewController" customModule="Swift_AutoLayoutSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uaU-Ix-R7d">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zda-Ne-mBO">
+                                <rect key="frame" x="60" y="164" width="270" height="146"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="TopButton"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hdu-Cj-qoF">
+                                <rect key="frame" x="60" y="440" width="120" height="45"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="0cc-3O-O7T"/>
+                                    <constraint firstAttribute="width" constant="120" id="g3M-8l-a5G"/>
+                                </constraints>
+                                <state key="normal" title="BottomButton"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Ggd-NI-Uob"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="zda-Ne-mBO" firstAttribute="top" secondItem="Ggd-NI-Uob" secondAttribute="top" constant="120" id="1BL-HV-c7c"/>
+                            <constraint firstItem="zda-Ne-mBO" firstAttribute="leading" secondItem="Ggd-NI-Uob" secondAttribute="leading" constant="60" id="52T-NT-K39"/>
+                            <constraint firstItem="Ggd-NI-Uob" firstAttribute="trailing" secondItem="zda-Ne-mBO" secondAttribute="trailing" constant="60" id="6hU-UC-UvL"/>
+                            <constraint firstItem="hdu-Cj-qoF" firstAttribute="leading" secondItem="Ggd-NI-Uob" secondAttribute="leading" constant="60" id="fsg-F7-bqs"/>
+                            <constraint firstItem="Ggd-NI-Uob" firstAttribute="bottom" secondItem="zda-Ne-mBO" secondAttribute="bottom" constant="500" id="lwD-Js-hXw"/>
+                            <constraint firstItem="hdu-Cj-qoF" firstAttribute="top" secondItem="zda-Ne-mBO" secondAttribute="bottom" constant="130" id="qkd-P5-OjX"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XdZ-9b-83u" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="29" y="832"/>
+        </scene>
+        <!--TopButtonと同じ幅、高さTopButtonからの距離、TopButtonと左端揃える-->
+        <scene sceneID="SGc-M2-7Hn">
+            <objects>
+                <viewController title="TopButtonと同じ幅、高さTopButtonからの距離、TopButtonと左端揃える" id="qLQ-YQ-VHg" customClass="ViewController" customModule="Swift_AutoLayoutSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WK2-j7-Mw1">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mFN-pu-bfV">
+                                <rect key="frame" x="60" y="164" width="200" height="48"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="TopButton"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="irc-Es-Wgb">
+                                <rect key="frame" x="60" y="332" width="200" height="48"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="r6l-3m-u4S"/>
+                                    <constraint firstAttribute="height" constant="200" id="tgY-tU-BOq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="1"/>
+                                <state key="normal" title="BottomButton"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="yqM-ai-7yr"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="mFN-pu-bfV" firstAttribute="top" secondItem="yqM-ai-7yr" secondAttribute="top" constant="120" id="N7u-Yh-geX"/>
+                            <constraint firstItem="mFN-pu-bfV" firstAttribute="leading" secondItem="yqM-ai-7yr" secondAttribute="leading" constant="60" id="Ynj-Lo-8W8"/>
+                            <constraint firstItem="irc-Es-Wgb" firstAttribute="leading" secondItem="mFN-pu-bfV" secondAttribute="leading" id="lBB-oJ-8bL"/>
+                            <constraint firstItem="irc-Es-Wgb" firstAttribute="top" secondItem="mFN-pu-bfV" secondAttribute="bottom" constant="120" id="oGq-Zr-xwE"/>
+                            <constraint firstItem="irc-Es-Wgb" firstAttribute="height" secondItem="mFN-pu-bfV" secondAttribute="height" id="pg5-Xr-XFb"/>
+                            <constraint firstItem="irc-Es-Wgb" firstAttribute="width" secondItem="mFN-pu-bfV" secondAttribute="width" id="t3j-OH-zrU"/>
+                            <constraint firstItem="yqM-ai-7yr" firstAttribute="bottom" secondItem="mFN-pu-bfV" secondAttribute="bottom" constant="500" id="zcM-5q-Wjp"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YSb-W8-j7z" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="843" y="832"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
